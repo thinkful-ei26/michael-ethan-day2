@@ -71,7 +71,20 @@
 
 // repeat(hello,5);
 // repeat(goodbye,5);
-  
+
+// const filter = (arr, fn) => arr.map(element => fn(element) ? element : null).filter(element => element);
+// const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
+// const filteredNames = filter(myNames, function(name) {
+//   return name[0] === 'R';
+// });
+
+const filter = (arr, fn) => arr.map(element => fn(element) ? element : null).filter(element => element);
+const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
+const filteredNames = filter(myNames, function(name) {
+  return name[0] === 'R';
+});
+
+
 
 // function filter(arr, fn) {
 // //   let newArray = [];
@@ -86,7 +99,7 @@
 //   // return newArray;
 
  
-//   return arr.map(element => fn(element) ? element : 0).filter(element => element);
+//   return arr.map(element => fn(element) ? element : null).filter(element => element);
 
 
 //   // let newArray = [];
@@ -112,33 +125,33 @@
 
 
 
-// console.log(filteredNames); // => ['Rich', 'Ray']
+console.log(filteredNames); // => ['Rich', 'Ray']
 
 
 
-function hazardWarningCreator(typeOfWarning) {
-  let warningCounter = 0;
+// function hazardWarningCreator(typeOfWarning) {
+//   let warningCounter = 0;
   
-  return function (location) {
-    warningCounter++;
-    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-    if (warningCounter === 1){ 
-      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`);
-    } else {
-      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`);
-    }
-  };
+//   return function (location) {
+//     warningCounter++;
+//     console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+//     if (warningCounter === 1){ 
+//       console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`);
+//     } else {
+//       console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`);
+//     }
+//   };
   
-}
+// }
 
-const rocksWarning = hazardWarningCreator('Rocks on the Road');
-const lostDog = hazardWarningCreator('help my dog is lost');
-const hailStorm = hazardWarningCreator('Hail storm');
+// const rocksWarning = hazardWarningCreator('Rocks on the Road');
+// const lostDog = hazardWarningCreator('help my dog is lost');
+// const hailStorm = hazardWarningCreator('Hail storm');
 
-rocksWarning('everywhere');
-rocksWarning('nowhere');
-lostDog('dog park');
-hailStorm('america');
+// rocksWarning('everywhere');
+// rocksWarning('nowhere');
+// lostDog('dog park');
+// hailStorm('america');
 
 
 // function turtleSteps(array){
