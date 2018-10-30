@@ -108,4 +108,21 @@ const filteredNames = filter(myNames, function(name) {
 
 
 
-console.log(filteredNames); // => ['Rich', 'Ray']
+// console.log(filteredNames); // => ['Rich', 'Ray']
+
+
+
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+  
+  return function (location) {
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+  }
+  
+}
+
+hazardWarningCreator("Rocks on the Road")("Colorado");
+hazardWarningCreator("help my dog is lost")("Colorado");
+hazardWarningCreator("Hail storm")("Colorado");
