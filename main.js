@@ -78,11 +78,11 @@
 //   return name[0] === 'R';
 // });
 
-const filter = (arr, fn) => arr.map(element => fn(element) ? element : null).filter(element => element);
-const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
-const filteredNames = filter(myNames, function(name) {
-  return name[0] === 'R';
-});
+// const filter = (arr, fn) => arr.map(element => fn(element) ? element : null).filter(element => element);
+// const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
+// const filteredNames = filter(myNames, function(name) {
+//   return name[0] === 'R';
+// });
 
 
 
@@ -125,7 +125,7 @@ const filteredNames = filter(myNames, function(name) {
 
 
 
-console.log(filteredNames); // => ['Rich', 'Ray']
+// console.log(filteredNames); // => ['Rich', 'Ray']
 
 
 
@@ -162,13 +162,18 @@ console.log(filteredNames); // => ['Rich', 'Ray']
 //   return newArray;
 // }
 
-// // function turtleMap(array){
-// //   return array.map(element => e)
-// // }
+const turtleFilter = array => array.filter(element => element[0] >= 0 && element[1] >= 0);
 
-// let stepArray = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+const turtleCounter = array => array.map(element => Math.abs(element[0]) + Math.abs(element[1]));
 
-// console.log(turtleSteps(stepArray));
+const turtleCounterLog = array => array.forEach(element => console.log(Math.abs(element[0]) + Math.abs(element[1])));
+
+
+let stepArray = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+console.log(turtleFilter(stepArray));
+console.log(turtleCounter(stepArray));
+turtleCounterLog(stepArray);
 
 
 // function decoderRing(words) {
