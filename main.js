@@ -73,42 +73,46 @@
 // repeat(goodbye,5);
   
 
-// function filter(arr, fn) {
-// //   let newArray = [];
-// //   for (let index = 0; index < arr.length; index++) {
-// //     if (fn(arr[index])){
-// //       newArray.push(arr[index]);
-// //     }
-// //   } return newArray;
-// // }
+function filter(arr, fn) {
 //   let newArray = [];
-//   arr.forEach(element => fn(element) ? newArray.push(element) : 0);
-//   return newArray;
-
-//   // let newArray = [];
-//   // for (let index = 0; index < arr.length; index++) 
-//   //   newArray.push(arr => arr[index]);
-  
-//   // return newArray;
+//   for (let index = 0; index < arr.length; index++) {
+//     if (fn(arr[index])){
+//       newArray.push(arr[index]);
+//     }
+//   } return newArray;
 // }
+  // let newArray = [];
+  // arr.forEach(element => fn(element) ? newArray.push(element) : 0);
+  // return newArray;
 
-// // DO NOT EDIT BETWEEN THESE LINES, BUT DO READ THE CODE ----->
-// // First we setup an array of strings we plan to filter:
-// const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
-
-// // We use your `filter` function here, capturing a new array into `filteredNames`
-// // comprised of names that only begin with 'R'
-// const filteredNames = filter(myNames, function(name) {
-//   // This is known as a "predicate function" - it's a function that 
-//   // only returns a boolean
-//   return name[0] === 'R';
-// });
+ 
+  return arr.map(element => fn(element) ? element : 0).filter(element => element);
 
 
+  // let newArray = [];
+  // for (let index = 0; index < arr.length; index++) 
+  //   newArray.push(arr => arr[index]);
+  
+  // return newArray;
+}
+
+// DO NOT EDIT BETWEEN THESE LINES, BUT DO READ THE CODE ----->
+// First we setup an array of strings we plan to filter:
+const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
+
+// We use your `filter` function here, capturing a new array into `filteredNames`
+// comprised of names that only begin with 'R'
+const filteredNames = filter(myNames, function(name) {
+  // This is known as a "predicate function" - it's a function that 
+  // only returns a boolean
+  return name[0] === 'R';
+});
 
 
 
-// console.log(filteredNames); // => ['Rich', 'Ray']
+
+
+console.log(filteredNames); // => ['Rich', 'Ray']
 
 
 
@@ -127,41 +131,37 @@
 // hazardWarningCreator("help my dog is lost")("Colorado");
 // hazardWarningCreator("Hail storm")("Colorado");
 
-function turtleSteps(array){
-  let newArray = [];
-  array.filter(element => element[0] >= 0 && element[1] >= 0)
-              //.map(element => element[0] + element[1]);
-              .forEach(element => newArray.push(element[0] + element[1]));
-  return newArray;
-}
-
-// function turtleMap(array){
-//   return array.map(element => e)
+// function turtleSteps(array){
+//   let newArray = [];
+//   array.filter(element => element[0] >= 0 && element[1] >= 0)
+//               //.map(element => element[0] + element[1]);
+//               .forEach(element => newArray.push(element[0] + element[1]));
+//   return newArray;
 // }
 
-let stepArray = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+// // function turtleMap(array){
+// //   return array.map(element => e)
+// // }
 
-console.log(turtleSteps(stepArray));
+// let stepArray = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+// console.log(turtleSteps(stepArray));
 
 
-function decoderRing(words) {
-  let input = words.split(" ");
+// function decoderRing(words) {
+//   let input = words.split('');
 
   
-  return input.reduce(function (accumulator, word) {
-      
-      if(word.length === 3){
-        
-        return accumulator + " ";
-      }else{
-       
-       
-        return accumulator + word[word.length-1].toUpperCase();;
-      }
+//   return input.reduce(function (accumulator, word) {
+//     if(word.length === 3){
+//       return accumulator + ' ';
+//     }else{
+//       return accumulator + word[word.length-1].toUpperCase();;
+//     }
 
-  }, "")
+//   }, '');
   
  
-}
+// }
 
-console.log(decoderRing('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'));
+// console.log(decoderRing('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'));
