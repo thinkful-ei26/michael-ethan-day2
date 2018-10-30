@@ -116,20 +116,30 @@
 
 
 
-// function hazardWarningCreator(typeOfWarning) {
-//   let warningCounter = 0;
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
   
-//   return function (location) {
-//     warningCounter++;
-//     console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-//     console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
-//   }
+  return function (location) {
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    if (warningCounter === 1){ 
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`);
+    } else {
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`);
+    }
+  };
   
-// }
+}
 
-// hazardWarningCreator("Rocks on the Road")("Colorado");
-// hazardWarningCreator("help my dog is lost")("Colorado");
-// hazardWarningCreator("Hail storm")("Colorado");
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const lostDog = hazardWarningCreator('help my dog is lost');
+const hailStorm = hazardWarningCreator('Hail storm');
+
+rocksWarning('everywhere');
+rocksWarning('nowhere');
+lostDog('dog park');
+hailStorm('america');
+
 
 // function turtleSteps(array){
 //   let newArray = [];
@@ -152,7 +162,7 @@
 //   return words.split(' ').reduce((accumulator, word) => word.length === 3 ? accumulator + ' ' : accumulator + word[word.length-1].toUpperCase(), '');
 // }
 
-const decoderRing = words => words.split(' ').reduce((accumulator, word) => word.length === 3 ? accumulator + ' ' : accumulator + word[word.length-1].toUpperCase(), '');
+// const decoderRing = words => words.split(' ').reduce((accumulator, word) => word.length === 3 ? accumulator + ' ' : accumulator + word[word.length-1].toUpperCase(), '');
 
 
 
@@ -171,4 +181,4 @@ const decoderRing = words => words.split(' ').reduce((accumulator, word) => word
 
 
 
-console.log(decoderRing('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'));
+// console.log(decoderRing('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'));
