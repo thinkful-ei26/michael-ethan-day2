@@ -53,21 +53,59 @@
 // console.log(average([1,2,3]));
 
 
-function repeat(fn,n) {
+// function repeat(fn,n) {
 
-  for (let index = 0; index < n; index++) {
+//   for (let index = 0; index < n; index++) {
 
-    fn();
+//     fn();
 
-  }
+//   }
+// }
+
+// function hello() {
+//   console.log("hello world");
+// }
+// function goodbye() {
+//   console.log("Goodbye World")
+// }
+
+// repeat(hello,5);
+// repeat(goodbye,5);
+  
+
+function filter(arr, fn) {
+//   let newArray = [];
+//   for (let index = 0; index < arr.length; index++) {
+//     if (fn(arr[index])){
+//       newArray.push(arr[index]);
+//     }
+//   } return newArray;
+// }
+  let newArray = [];
+  arr.forEach(element => fn(element) ? newArray.push(element) : 0);
+  return newArray;
+
+  // let newArray = [];
+  // for (let index = 0; index < arr.length; index++) 
+  //   newArray.push(arr => arr[index]);
+  
+  // return newArray;
 }
 
-function hello() {
-  console.log("hello world");
-}
-function goodbye() {
-  console.log("Goodbye World")
-}
+// DO NOT EDIT BETWEEN THESE LINES, BUT DO READ THE CODE ----->
+// First we setup an array of strings we plan to filter:
+const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
 
-repeat(hello,5);
-repeat(goodbye,5);
+// We use your `filter` function here, capturing a new array into `filteredNames`
+// comprised of names that only begin with 'R'
+const filteredNames = filter(myNames, function(name) {
+  // This is known as a "predicate function" - it's a function that 
+  // only returns a boolean
+  return name[0] === 'R';
+});
+
+
+
+
+
+console.log(filteredNames); // => ['Rich', 'Ray']
