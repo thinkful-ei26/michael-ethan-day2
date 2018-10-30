@@ -73,36 +73,36 @@
 // repeat(goodbye,5);
   
 
-function filter(arr, fn) {
+// function filter(arr, fn) {
+// //   let newArray = [];
+// //   for (let index = 0; index < arr.length; index++) {
+// //     if (fn(arr[index])){
+// //       newArray.push(arr[index]);
+// //     }
+// //   } return newArray;
+// // }
 //   let newArray = [];
-//   for (let index = 0; index < arr.length; index++) {
-//     if (fn(arr[index])){
-//       newArray.push(arr[index]);
-//     }
-//   } return newArray;
-// }
-  let newArray = [];
-  arr.forEach(element => fn(element) ? newArray.push(element) : 0);
-  return newArray;
+//   arr.forEach(element => fn(element) ? newArray.push(element) : 0);
+//   return newArray;
 
-  // let newArray = [];
-  // for (let index = 0; index < arr.length; index++) 
-  //   newArray.push(arr => arr[index]);
+//   // let newArray = [];
+//   // for (let index = 0; index < arr.length; index++) 
+//   //   newArray.push(arr => arr[index]);
   
-  // return newArray;
-}
+//   // return newArray;
+// }
 
-// DO NOT EDIT BETWEEN THESE LINES, BUT DO READ THE CODE ----->
-// First we setup an array of strings we plan to filter:
-const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
+// // DO NOT EDIT BETWEEN THESE LINES, BUT DO READ THE CODE ----->
+// // First we setup an array of strings we plan to filter:
+// const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
 
-// We use your `filter` function here, capturing a new array into `filteredNames`
-// comprised of names that only begin with 'R'
-const filteredNames = filter(myNames, function(name) {
-  // This is known as a "predicate function" - it's a function that 
-  // only returns a boolean
-  return name[0] === 'R';
-});
+// // We use your `filter` function here, capturing a new array into `filteredNames`
+// // comprised of names that only begin with 'R'
+// const filteredNames = filter(myNames, function(name) {
+//   // This is known as a "predicate function" - it's a function that 
+//   // only returns a boolean
+//   return name[0] === 'R';
+// });
 
 
 
@@ -112,17 +112,33 @@ const filteredNames = filter(myNames, function(name) {
 
 
 
-function hazardWarningCreator(typeOfWarning) {
-  let warningCounter = 0;
+// function hazardWarningCreator(typeOfWarning) {
+//   let warningCounter = 0;
   
-  return function (location) {
-    warningCounter++;
-    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
-  }
+//   return function (location) {
+//     warningCounter++;
+//     console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+//     console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+//   }
   
+// }
+
+// hazardWarningCreator("Rocks on the Road")("Colorado");
+// hazardWarningCreator("help my dog is lost")("Colorado");
+// hazardWarningCreator("Hail storm")("Colorado");
+
+function turtleSteps(array){
+  let newArray = [];
+  array.filter(element => element[0] >= 0 && element[1] >= 0)
+              //.map(element => element[0] + element[1]);
+              .forEach(element => newArray.push(element[0] + element[1]));
+  return newArray;
 }
 
-hazardWarningCreator("Rocks on the Road")("Colorado");
-hazardWarningCreator("help my dog is lost")("Colorado");
-hazardWarningCreator("Hail storm")("Colorado");
+// function turtleMap(array){
+//   return array.map(element => e)
+// }
+
+let stepArray = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+console.log(turtleSteps(stepArray));
