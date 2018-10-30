@@ -142,3 +142,26 @@ function turtleSteps(array){
 let stepArray = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 
 console.log(turtleSteps(stepArray));
+
+
+function decoderRing(words) {
+  let input = words.split(" ");
+
+  
+  return input.reduce(function (accumulator, word) {
+      
+      if(word.length === 3){
+        
+        return accumulator + " ";
+      }else{
+       
+       
+        return accumulator + word[word.length-1].toUpperCase();;
+      }
+
+  }, "")
+  
+ 
+}
+
+console.log(decoderRing('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'));
