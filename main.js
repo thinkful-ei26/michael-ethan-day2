@@ -1,23 +1,23 @@
 'use strict';
 
-// function maxNum(num) {
+function maxNum(num) {
     
-//   if(num.length === 0){
-//     return 0;
-//   }
-//   let index = num.length;
-//   let currentMax = 0;
-//   while (index != -1) {
+  if(num.length === 0){
+    return 0;
+  }
+  let index = num.length;
+  let currentMax = 0;
+  while (index != -1) {
         
-//     if(num[index] > currentMax ){
-//       currentMax = num[index];
-//     }
-//     --index;
-//   }
+    if(num[index] > currentMax ){
+      currentMax = num[index];
+    }
+    --index;
+  }
     
-//   return currentMax;
+  return currentMax;
 
-// }
+}
 
 // function minNum(num) {
 //   if(num.length === 0){
@@ -85,9 +85,8 @@ function filter(arr, fn) {
   // arr.forEach(element => fn(element) ? newArray.push(element) : 0);
   // return newArray;
 
- 
-  return arr.map(element => fn(element) ? element : 0).filter(element => element);
-
+  return arr.length === 0 ? arr : (fn(arr[0]) ? [arr[0]] : []).concat(filter(arr.slice(1), fn));
+  //return arr.map(element => fn(element) ? element : 0).filter(element => element);
 
   // let newArray = [];
   // for (let index = 0; index < arr.length; index++) 
