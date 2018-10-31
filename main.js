@@ -74,12 +74,17 @@
 
 const resultArray = [];
 const filter = (arr, fn) => arr.forEach(element => fn(element) ? resultArray.push(element) : 0);//.filter(element => element);
+
+//Recursive
+//const filter = (arr, fn) => arr.length === 0 ? arr : (fn(arr[0]) ? [arr[0]] : []).concat(filter(arr.slice(1), fn));
+
 const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
 const filteredNames = filter(myNames, function(name) {
   return name[0] === 'R';
 });
-
+//For recursive
 //console.log(filteredNames);
+//
 console.log(resultArray);
 
 // const filter = (arr, fn) => arr.map(element => fn(element) ? element : null).filter(element => element);
